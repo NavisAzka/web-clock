@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      body {
+        background-color: rgb(15, 15, 15);
+      }
+
+      .container {
+        display: inline-block;
+        position: fixed;
+        right: 20%;
+        left: 20%;
+        top: 20%;
+        bottom: 20%;
+      }
+
+      h1 {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+        font-size: 120px;
+        filter: drop-shadow(0 0 30px rgb(255, 255, 255));
+        color: rgb(166, 104, 227);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><span class="hour">HH</span>:<span class="minute">MM</span>:<span class="second">SS</span></h1>
+    </div>
+  </body>
+
+  <script>
+    setInterval(() => {
+      const d = new Date();
+
+      document.querySelector(".second").innerHTML = d.getSeconds();
+      document.querySelector(".minute").innerHTML = d.getMinutes();
+      document.querySelector(".hour").innerHTML = d.getHours();
+
+      document.querySelector("h1").style.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    }, 1000);
+  </script>
+</html>
