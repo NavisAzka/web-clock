@@ -9,6 +9,19 @@
       body {
         background-color: rgb(15, 15, 15);
       }
+      @media only screen and (min-width: 300px) {
+        /* For hp: */
+        h1 {
+          font-size: 72px;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        /* For dekstop: */
+        h1 {
+          font-size: 120px;
+        }
+      }
 
       .container {
         display: inline-block;
@@ -22,8 +35,7 @@
       h1 {
         font-family: "Courier New", Courier, monospace;
         text-align: center;
-        font-size: 120px;
-        filter: drop-shadow(0 0 30px rgb(255, 255, 255));
+        filter: drop-shadow(0 0 3 rgb(255, 255, 255));
         color: rgb(166, 104, 227);
       }
     </style>
@@ -42,7 +54,7 @@
       document.querySelector(".minute").innerHTML = d.getMinutes();
       document.querySelector(".hour").innerHTML = d.getHours();
 
-      document.querySelector("h1").style.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+      document.querySelector("h1").style.color = `rgb(${Math.random() * 245 + 10}, ${Math.random() * 245 + 10}, ${Math.random() * 245 + 10})`;
     }, 1000);
   </script>
 </html>
